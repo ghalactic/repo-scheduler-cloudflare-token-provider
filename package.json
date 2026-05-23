@@ -1,0 +1,26 @@
+{
+  "name": "repo-scheduler-cloudflare-token-provider",
+  "version": "0.0.0",
+  "description": "Cloudflare Worker cron trigger for the Ghalactic repo scheduler",
+  "private": true,
+  "type": "module",
+  "cloudflare": {
+    "bindings": {
+      "GITHUB_APP_ID": {
+        "description": "Numeric ID of the GitHub App."
+      },
+      "GITHUB_REPO": {
+        "description": "Target repository in `owner/repo` format."
+      },
+      "GITHUB_EVENT_TYPE": {
+        "description": "The `repository_dispatch` event type string."
+      },
+      "GITHUB_APP_PK": {
+        "description": "PEM-encoded private key for the GitHub App. Stored in the Secrets Store."
+      },
+      "GITHUB_PAYLOAD": {
+        "description": "JSON object to include in every dispatch event. Defaults to {}."
+      }
+    }
+  }
+}

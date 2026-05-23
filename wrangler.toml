@@ -1,0 +1,17 @@
+name = "repo-scheduler-cloudflare-token-provider"
+main = "dist/index.js"
+compatibility_date = "2026-05-23"
+
+[triggers]
+crons = ["*/30 * * * *"]
+
+[vars]
+GITHUB_APP_ID = "3820453"
+GITHUB_REPO = "ghalactic/token-provider"
+GITHUB_EVENT_TYPE = "provisionTokens"
+GITHUB_PAYLOAD = "{}"
+
+[[secrets_store_secrets]]
+binding = "GITHUB_APP_PK"
+store_id = "bdd357dfc3ac450ebf8d7a4f608be6ed"
+secret_name = "ghalactic-repo-scheduler-pk"
